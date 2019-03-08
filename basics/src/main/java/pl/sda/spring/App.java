@@ -3,7 +3,7 @@ package pl.sda.spring;
 public class App {
 
     public static void main(String[] args) {
-
-        new LotteryRunner().run();
+        LotteryRunner lotteryRunner = new LotteryRunner();
+        lotteryRunner.run();
     }
 }
