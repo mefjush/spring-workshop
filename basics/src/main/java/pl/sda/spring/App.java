@@ -1,57 +1,31 @@
 package pl.sda.spring;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
 
+    private static final List<String> COUNTRIES = Arrays.asList("PL", "DE", "BE", "US", "CZ", "SK", "RU");
+    private static final String PROMPT_MSG = "Enter your country code to draw a prize...";
+
     public static void main(String[] args) {
-        Map<String, String> provinces = getProvinces();
 
-        System.out.println("Province codes: ");
-        System.out.println(provinces);
+        Map<String, Lottery> countryLotteries = new HashMap<>();
 
-        Map<String, Lottery> provinceLotteries = new HashMap<>();
-
-        for (Map.Entry<String, String> province : provinces.entrySet()) {
-            provinceLotteries.put(province.getKey(), new Lottery());
+        for (String countryCode : COUNTRIES) {
+            countryLotteries.put(countryCode, new Lottery(countryCode));
         }
 
-        System.out.println("Enter province code: ");
-
+        System.out.println(PROMPT_MSG);
         Scanner sc = new Scanner(System.in);
         while(sc.hasNextLine()) {
-            String code = sc.nextLine();
-            Lottery lottery = provinceLotteries.get(code);
+            String code = sc.nextLine().toUpperCase();
+            Lottery lottery = countryLotteries.get(code);
             if (lottery == null) {
-                System.out.println("Wrong code, try again.");
+                System.out.println("Unrecognized country code, supported codes: " + COUNTRIES);
             } else {
-                String prize = lottery.getPrize();
-                System.out.println("Your prize is: " + prize);
+                System.out.println("Your prize is: " + lottery.getPrize());
             }
+            System.out.println(PROMPT_MSG);
         }
     }
-
-    private static Map<String, String> getProvinces() {
-        Map<String, String> provinces = new HashMap<>();
-        provinces.put("02", "Dolnośląskie");
-        provinces.put("04", "Kujawsko-Pomorskie");
-        provinces.put("06", "Lubelskie");
-        provinces.put("08", "Lubuskie");
-        provinces.put("10", "Łódzkie");
-        provinces.put("12", "Małopolskie");
-        provinces.put("14", "Mazowieckie");
-        provinces.put("16", "Opolskie");
-        provinces.put("18", "Podkarpackie");
-        provinces.put("20", "Podlaskie");
-        provinces.put("22", "Pomorskie");
-        provinces.put("24", "Śląskie");
-        provinces.put("26", "Świętokrzyskie");
-        provinces.put("28", "Warmińsko-Mazurskie");
-        provinces.put("30", "Wielkopolskie");
-        provinces.put("32", "Zachodniopomorskie");
-        return provinces;
-    }
-
 }
