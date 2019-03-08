@@ -12,16 +12,8 @@ public class RandomNumberGenerator {
     private SecureRandom secureRandom = new SecureRandom();
 
     public RandomNumberGenerator() {
-        init();
         logger.info("Creating RandomNumberGenerator");
-    }
-
-    private void init() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Sleep.sleep();
     }
 
     public int randomInt(int size) {
