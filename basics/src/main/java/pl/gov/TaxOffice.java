@@ -2,10 +2,16 @@ package pl.gov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.sda.spring.Sleep;
 
 public class TaxOffice {
 
     private final Logger logger = LoggerFactory.getLogger(TaxOffice.class);
+
+    public TaxOffice() {
+        logger.info("Creating TaxOffice");
+        Sleep.sleep();
+    }
 
     public void notifyPrizeWon(String prize, Integer pln) {
         logger.info("Zaraportowano do urzędu wygraną nagrody " + prize + " o wartości " + pln + "zł.");

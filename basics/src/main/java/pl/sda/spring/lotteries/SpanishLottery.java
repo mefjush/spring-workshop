@@ -18,7 +18,7 @@ public class SpanishLottery implements Lottery {
 
     @Override
     public int getTicketCost() {
-        return 5;
+        return 30;
     }
 
     public String getPrize() {
