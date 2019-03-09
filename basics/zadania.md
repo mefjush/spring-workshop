@@ -37,8 +37,23 @@
     * Sprawdź jakie metody ona oferuje.
     * (Opcjonalnie) W tabelce zamieść 2 kursy: kupna i sprzedaży.
     
-5. Kantor - testowanie
+6. Kantor - formularz
+    * Dodaj podstronę z formularzem do przeliczania walut. 
+    * Daj użytkownikowi możliwość wybrania kwoty, waluty i waluty docelowej. 
+    * Przelicz podaną kwotę i wyświetl uzytkownikowi.
+    
 6. Kantor - db / data
+    * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
+    * Zapisuj zebrane dane do bazy daych. 
+    * Przygotuj podstronę ze statystykami, np:
+        * Wyświetl jaka jest najpopularniejsza konwertowana walutę.
+        * Jaka jest średnia przeliczana kwota. 
+        * Suma wszystkich przeliczeń z PLN.
+    
+    * ??? jdbc + sth else
+
+    
+5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow
 9. Kantor - security
