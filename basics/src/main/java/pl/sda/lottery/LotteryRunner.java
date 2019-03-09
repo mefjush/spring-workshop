@@ -1,6 +1,6 @@
-package pl.sda.spring;
+package pl.sda.lottery;
 
-import pl.sda.spring.lotteries.*;
+import pl.sda.lottery.lotteries.*;
 
 import java.util.Arrays;
 import java.util.List;

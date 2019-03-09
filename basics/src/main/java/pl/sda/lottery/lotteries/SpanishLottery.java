@@ -1,9 +1,9 @@
-package pl.sda.spring.lotteries;
+package pl.sda.lottery.lotteries;
 
-import com.tdd.audio.AudioPlayer;
+import pl.sda.lottery.AudioPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.sda.spring.RandomNumberGenerator;
+import pl.sda.lottery.RandomNumberGenerator;
 
 public class SpanishLottery implements Lottery {
 

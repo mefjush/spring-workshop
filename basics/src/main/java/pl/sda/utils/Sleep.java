@@ -1,4 +1,4 @@
-package pl.sda.spring;
+package pl.sda.utils;
 
 public class Sleep {
     public static void sleep() {

@@ -1,9 +1,9 @@
-package com.tdd.audio;
+package pl.sda.audio;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.sda.spring.RandomNumberGenerator;
-import pl.sda.spring.Sleep;
+import pl.sda.lottery.RandomNumberGenerator;
+import pl.sda.utils.Sleep;
 
 import javax.sound.sampled.*;
 import java.io.IOException;

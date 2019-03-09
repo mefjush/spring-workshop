@@ -1,4 +1,4 @@
-package pl.sda.spring.lotteries;
+package pl.sda.lottery.lotteries;
 
 public interface Lottery {
 

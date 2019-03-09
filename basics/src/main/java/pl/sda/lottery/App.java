@@ -1,4 +1,4 @@
-package pl.sda.spring;
+package pl.sda.lottery;
 
 public class App {
 

@@ -1,6 +1,6 @@
-package pl.sda.spring.lotteries;
+package pl.sda.lottery.lotteries;
 
-import com.tdd.audio.AudioPlayer;
+import pl.sda.lottery.AudioPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

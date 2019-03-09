@@ -2,7 +2,7 @@ package pl.gov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.sda.spring.Sleep;
+import pl.sda.utils.Sleep;
 
 public class TaxOffice {
 
