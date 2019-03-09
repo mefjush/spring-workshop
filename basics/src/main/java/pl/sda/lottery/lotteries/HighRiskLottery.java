@@ -1,6 +1,6 @@
 package pl.sda.lottery.lotteries;
 
-import pl.sda.lottery.AudioPlayer;
+import pl.sda.audio.AudioPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.gov.TaxOffice;
