@@ -1,4 +1,8 @@
 0. Lottery - podstawy Springa
+    0. Zaimportuj projekt na zajęcia 
+        * `git clone https://github.com/mefjush/spring-workshop`
+        * `Idea -> File -> Open -> Wybierz plik pom.xml -> Open as Project`
+        
     1. Wstęp
         * Uruchom aplikację Loterii za pomocą klasy `App`. Zwróć uwagę na czas startu aplikacji. Co na niego wpływa?
         * Zamień klasę `LotteryRunner` na Bean. Zamień `App` na aplikację Springową. Przykład znajedziesz w pakiecie `example`.
@@ -17,19 +21,24 @@
 1. Kantor - Spring Boot 
     * Będziemy tworzyć aplikację kantoru wymiany walut.
     * W tym zadaniu posłużymy się projektem `Spring Boot`.
-    * Wejdź na stronę https://start.spring.io/ i wygeneruj nowy projekt. (Zależności które warto zanaczyć na początek: web, jpa)
+    * Wejdź na stronę https://start.spring.io/ i wygeneruj nowy projekt. (Zależność którą warto zaznaczyć na początek: web)
     * Otwórz projekt w swoim IDE, upewnij się, że możesz go uruchomić.
+    * Opcjonalnie projekt można również uruchomić z linii komend `mvn spring-boot:run`
     
 2. Kantor - zasoby statyczne
     * Stwórz prostą stronę-wizytówkę. Z nazwą i adresem Twojego kantoru.
-    * ???
+    * W tym celu stwórz plik index.html w katalogu `src/main/resources/static`
     * (Opcjonalnie) Popracuj na wyglądem strony. W tym celu możesz użyć styli CSS.
     
 3. Kantor - strony dynamiczne
-    * Zamień swoją statyczną stronę na dynamiczną. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
-    * Użyj wzorca MVC. Zaimplemntuj widok przy użyciu ???.
-    * ???
+    * Dodaj podstronę /contact. Tym razem będzie to strona dynamiczna. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
+    * Zacznij od prostego rozwiązania i zwróć prosty napis.
+    * Gotowe? Teraz zmodyfikuj swoje rozwiązanie tak aby używało wzorca MVC. 
+    * Użyjemy Thymeleaf jako silnika widoku. W tym celu dodaj do mavena zależność `spring-boot-starter-thymeleaf`.
     * (Opcjonalnie) Do wyświetlenia informacji czy jest otwarte sprawdzaj nie tylko datę ale również godzinę.
+    * Wskazówki: 
+       * Restarty aplikacji zajmują zbyt długo? Dodaj zależność `spring-boot-devtools` do mavena.
+       * Dokumentacja: https://spring.io/guides/gs/serving-web-content/
     
 4. Kantor - client http
     * Dodaj podstronę z dzisiejszym kursem walut.
