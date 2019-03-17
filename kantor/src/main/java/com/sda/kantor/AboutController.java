@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class AboutPageController {
+public class AboutController {
 
     @GetMapping("/about")
     @ResponseBody

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div th:replace="fragments/header"></div>
+
+<p>Pogoda</p>
+<table>
+    <tr th:each="weather : ${weatherList}">
+        <td th:text="${weather.getLocationName()}"></td>
+        <td th:text="${weather.getTemperature()}"></td>
+    </tr>
+</table>
+
+<p>Zaawansowana pogoda</p>
+<form action="/weather/details">
+    <input name="location"/>
+    <select name="scale">
+        <option value="C">C</option>
+        <option value="F">F</option>
+    </select>
+    <input type="submit">
+</form>
+
+</body>
+</html>

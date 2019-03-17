@@ -8,6 +8,11 @@
 
 <div th:replace="fragments/header"></div>
 
-<p th:text="'Strona stworzona przez ' + ${name} + ' i uruchomiona na '  + ${host} + '.'"/>
+<p>Twoja Pogoda</p>
+<table>
+    <td th:text="${weather.getLocationName()}"></td>
+    <td th:text="${weather.getTemperature()} + '°' + ${scale}"></td>
+</table>
+
 </body>
 </html>

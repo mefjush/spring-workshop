@@ -28,7 +28,7 @@
 2. Kantor - zasoby statyczne
     * Stwórz prostą stronę-wizytówkę. Z nazwą i adresem Twojego kantoru.
     * W tym celu stwórz plik index.html w katalogu `src/main/resources/static`
-    * (Opcjonalnie) Popracuj na wyglądem strony. W tym celu możesz użyć styli CSS.
+    * Popracuj na wyglądem strony. W tym celu użyj styli CSS.
     
 3. Kantor - strony dynamiczne
     * Dodaj podstronę /contact. Tym razem będzie to strona dynamiczna. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
@@ -40,8 +40,13 @@
        * Restarty aplikacji zajmują zbyt długo? Dodaj zależność `spring-boot-devtools` do mavena.
        * Dokumentacja: https://spring.io/guides/gs/serving-web-content/
     
-4. Kantor - client http
-    * Dodaj podstronę z dzisiejszym kursem walut.
+4. Kantor - strony dynamiczne - model
+    * Dodaj podstronę z dzisiejszym kursem walut (na początek wystarczy EUR, USD i CHF). 
+    * Stwórz klasę `Rate`, która będzie reprezentować kurs wymiany waluty - będzie to Twój Model
+    * Stwórz podstronę `/rates` która wyświetli aktualne kursy wymiany - korzystając z klasy `Rate`
+    
+5. Kantor - strony dynamiczne - http client
+    * Spraw aby Twoje kursy walut były dynamiczne.
     * Jako źródła danych użyj `https://api.exchangeratesapi.io/latest`. Dokumentację znajdziesz na stronie `https://exchangeratesapi.io/`.
     * Użyj klasy `RestTemplate` ze springa.
     * Sprawdź jakie metody ona oferuje.
@@ -52,11 +57,16 @@
     * Daj użytkownikowi możliwość wybrania kwoty, waluty i waluty docelowej. 
     * Przelicz podaną kwotę i wyświetl uzytkownikowi.
     
-6. Kantor - db / data
+7. Kantor - rozszerzanie template'ów
+    * Twoja strona ma już kilka podstron - chcielibyśmy móc łatwo w niej nawigować.
+    * W katalogu `templates/fragment` dodaj `header.html` - fragment strony zawierający nazwę twojej strony i proste menu z podstronami.
+    * Zmień template każdej z podstron tak aby używał właśnie stworzonego fragmentu.
+    
+8. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
     * Zapisuj zebrane dane do bazy daych. 
     * Przygotuj podstronę ze statystykami, np:
-        * Wyświetl jaka jest najpopularniejsza konwertowana walutę.
+        * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
     
