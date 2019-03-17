@@ -36,8 +36,9 @@ Scenario:
      * Max converted amount, avg, top 5 currencies,
      * JDBC
      * Spring-magic
-9. Auth - logged in user gets a better exchange rate (built in login? google?)
-10. Security 
+9. Test - test data insertion/query
+10. Auth - logged in user gets a better exchange rate (built in login? google?)
+11. Security 
      * Add an option to order a money exchange
      * Only logged in user can make an order
 

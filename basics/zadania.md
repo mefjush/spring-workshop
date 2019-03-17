@@ -12,11 +12,12 @@
     3. Zakończenie
         * Załóżmy jednak, że nie chcemy by nasz `RandomNumberGenerator` był singletonem. Chcemy posiadać wiele instancji tej klasy. Wprowadź zmianę przy pomocy adnotacji `@Scope`. 
         * (Opcjonalnie) Wymyśl własny typ loterii i dodaj go do aplikacji.
+        * (Opcjonaline) Dodaj klasę `Committee` reprezentującą Komisję Kontroli Gier i Zakładów. Powiadom komisję o wyniku każdego głosowania. 
     
 1. Kantor - Spring Boot 
     * Będziemy tworzyć aplikację kantoru wymiany walut.
     * W tym zadaniu posłużymy się projektem `Spring Boot`.
-    * Wejdź na stronę https://start.spring.io/ i wygeneruj nowy projekt. 
+    * Wejdź na stronę https://start.spring.io/ i wygeneruj nowy projekt. (Zależności które warto zanaczyć na początek: web, jpa)
     * Otwórz projekt w swoim IDE, upewnij się, że możesz go uruchomić.
     
 2. Kantor - zasoby statyczne
