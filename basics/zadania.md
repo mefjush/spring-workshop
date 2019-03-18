@@ -78,13 +78,12 @@
          spring.datasource.username=springuser
          spring.datasource.password=ThePassword 
          ```
-    * Przygotuj podstronę ze statystykami, np:
+    * Do zapisywania stwórz repozytorium korzystające z `JdbcTemplate`.
+    * Przygotuj podstronę ze statystykami, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
         * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
     
-    * ??? jdbc + sth else
-
 9. Kantor - security 
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
     * Zabezpiecz dostęp do niej przy pomocy spring security.
