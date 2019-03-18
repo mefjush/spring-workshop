@@ -69,13 +69,25 @@
     
 8. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
-    * Zapisuj zebrane dane do bazy daych. 
+    * Zapisuj zebrane informacje w bazie danych MySQL.
+    * Dodaj do mavena zależność `spring-boot-starter-data-jpa`
+    * Uruchom aplikację
+    * Jakiś problem? Dodaj wymaganą konfigurację bazy danych:
+         ```
+         spring.datasource.url=jdbc:mysql://localhost:3306/db_example
+         spring.datasource.username=springuser
+         spring.datasource.password=ThePassword 
+         ```
     * Przygotuj podstronę ze statystykami, np:
         * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
     
     * ??? jdbc + sth else
+
+9. Kantor - security 
+    * Nowo dodana podstrona zawiera dość wrażliwe dane.
+    * Zabezpiecz dostęp do niej przy pomocy spring security.
 
 5. Kantor - testowanie
 7. Kantor - integration

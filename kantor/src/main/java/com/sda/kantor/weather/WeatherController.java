@@ -12,9 +12,13 @@ import java.util.List;
 public class WeatherController {
 
     private final WeatherService weatherService;
+    private final WeatherCheckRepository weatherCheckRepository;
+    private final SmartWeatherCheckRepository smartWeatherCheckRepository;
 
-    public WeatherController(WeatherService weatherService) {
+    public WeatherController(WeatherService weatherService, WeatherCheckRepository weatherCheckRepository, SmartWeatherCheckRepository smartWeatherCheckRepository) {
         this.weatherService = weatherService;
+        this.weatherCheckRepository = weatherCheckRepository;
+        this.smartWeatherCheckRepository = smartWeatherCheckRepository;
     }
 
     @GetMapping("/weather-simple")
@@ -39,6 +43,8 @@ public class WeatherController {
 
     @GetMapping("/weather/details")
     public ModelAndView custom(@Param("location") String location, @Param("scale") String scale) {
+//        weatherCheckRepository.saveWeatherCheck(location, scale);
+        smartWeatherCheckRepository.save(new WeatherCheck(location, scale));
         List<Weather> weatherList = weatherService.getWeatherList();
         for (Weather weather : weatherList) {
             if (weather.getLocationName().equals(location)) {
