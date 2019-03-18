@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AboutController {
 
-    @GetMapping("/about")
+    @GetMapping("/about-simple")
     @ResponseBody
     public String about() {
         String author = "Mateusza";
@@ -17,7 +17,7 @@ public class AboutController {
         return "Strona napisania przez " + author + ". Uruchomiona na " + hostname + ".";
     }
 
-    @GetMapping("/abt")
+    @GetMapping("/about")
     public String abt(Model model) {
         model.addAttribute("name", "Mateusza");
         model.addAttribute("host", Hostname.getHostname());

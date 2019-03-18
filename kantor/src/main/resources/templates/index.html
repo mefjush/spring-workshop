@@ -3,9 +3,13 @@
 <head th:replace="fragments/layout :: head"></head>
 <body>
     <div th:replace="fragments/layout :: header"></div>
-    <main class="container" role="main">
+    <main class="container">
         <div class="row">
-            <h4 th:text="'Strona stworzona przez ' + ${name} + ' i uruchomiona na '  + ${host} + '.'"/>
+            <div>
+                <h2>Witaj w Kant-orze!</h2>
+                <p>Znajdziesz nas we Wrocławiu na ulicy Walutowej 15.</p>
+                <p>Telefon: 432-512-121.</p>
+            </div>
         </div>
     </main>
 </body>

@@ -1,18 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<head th:replace="fragments/layout :: head"></head>
 <body>
 
-<div th:replace="fragments/header"></div>
+<div th:replace="fragments/layout :: header"></div>
+<main class="container">
 
-<p>Twoja Pogoda</p>
-<table>
-    <td th:text="${weather.getLocationName()}"></td>
-    <td th:text="${weather.getTemperature()} + '°' + ${scale}"></td>
-</table>
+    <h2>Twoja Pogoda</h2>
+    <table>
+        <td th:text="${weather.getLocationName()}"></td>
+        <td th:text="${weather.getTemperature()} + '°' + ${scale}"></td>
+    </table>
+
+</main>
 
 </body>
 </html>

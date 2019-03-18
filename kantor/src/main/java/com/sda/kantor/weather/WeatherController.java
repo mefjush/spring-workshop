@@ -17,7 +17,7 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/weather")
+    @GetMapping("/weather-simple")
     public ModelAndView weather() {
         ModelAndView modelAndView = new ModelAndView("weather");
         List<Weather> weatherList = Arrays.asList(
@@ -29,7 +29,7 @@ public class WeatherController {
         return modelAndView;
     }
 
-    @GetMapping("/wth")
+    @GetMapping("/weather")
     public ModelAndView wth() {
         List<Weather> weatherList = weatherService.getWeatherList();
         ModelAndView modelAndView = new ModelAndView("weather");

@@ -29,6 +29,8 @@
     * Stwórz prostą stronę-wizytówkę. Z nazwą i adresem Twojego kantoru.
     * W tym celu stwórz plik index.html w katalogu `src/main/resources/static`
     * Popracuj na wyglądem strony. W tym celu użyj styli CSS.
+    * (Opcjonalnie) Dodaj zdjęcie lokalu/własciciela.
+    * (Opcjonalnie) Dodaj mapę z dojazdem. (Google maps -> Wybierz miejsce -> Embed)
     
 3. Kantor - strony dynamiczne
     * Dodaj podstronę /contact. Tym razem będzie to strona dynamiczna. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
@@ -56,11 +58,14 @@
     * Dodaj podstronę z formularzem do przeliczania walut. 
     * Daj użytkownikowi możliwość wybrania kwoty, waluty i waluty docelowej. 
     * Przelicz podaną kwotę i wyświetl uzytkownikowi.
+    * (Opcjonalnie) Co gdy użytkownik poda nieprawidłową wartość? Wyświetl komunikat stosowny komunikat.
     
 7. Kantor - rozszerzanie template'ów
     * Twoja strona ma już kilka podstron - chcielibyśmy móc łatwo w niej nawigować.
-    * W katalogu `templates/fragment` dodaj `header.html` - fragment strony zawierający nazwę twojej strony i proste menu z podstronami.
-    * Zmień template każdej z podstron tak aby używał właśnie stworzonego fragmentu.
+    * W katalogu `templates/fragments` dodaj `layout.html` - Twój ogólny zarys strony.
+    * Do stworzonego pliku dodaj nazwę strony i proste menu. Oznacz je jako `th:fragment="header"`
+    * W pozostałych widokach użyj zdefiniownego fragmentu np. `<div th:replace="fragments/layout :: header"></div>`
+    * Zmień widok każdej z podstron tak aby używał tego fragmentu.
     
 8. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
@@ -72,7 +77,6 @@
     
     * ??? jdbc + sth else
 
-    
 5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow

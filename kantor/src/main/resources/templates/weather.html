@@ -1,30 +1,29 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<head th:replace="fragments/layout :: head"></head>
 <body>
 
-<div th:replace="fragments/header"></div>
+<div th:replace="fragments/layout :: header"></div>
 
-<p>Pogoda</p>
-<table>
-    <tr th:each="weather : ${weatherList}">
-        <td th:text="${weather.getLocationName()}"></td>
-        <td th:text="${weather.getTemperature()}"></td>
-    </tr>
-</table>
+<main class="container">
+    <h2>Pogoda</h2>
+    <table>
+        <tr th:each="weather : ${weatherList}">
+            <td th:text="${weather.getLocationName()}"></td>
+            <td th:text="${weather.getTemperature()}"></td>
+        </tr>
+    </table>
 
-<p>Zaawansowana pogoda</p>
-<form action="/weather/details">
-    <input name="location"/>
-    <select name="scale">
-        <option value="C">C</option>
-        <option value="F">F</option>
-    </select>
-    <input type="submit">
-</form>
+    <h2>Zaawansowana pogoda</h2>
+    <form action="/weather/details">
+        <input name="location"/>
+        <select name="scale">
+            <option value="C">C</option>
+            <option value="F">F</option>
+        </select>
+        <input type="submit">
+    </form>
+</main>
 
 </body>
 </html>
