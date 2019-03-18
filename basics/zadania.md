@@ -75,8 +75,8 @@
     * Jakiś problem? Dodaj wymaganą konfigurację bazy danych:
          ```
          spring.datasource.url=jdbc:mysql://localhost:3306/db_example
-         spring.datasource.username=springuser
-         spring.datasource.password=ThePassword 
+         spring.datasource.username=???
+         spring.datasource.password=???
          ```
     * Do zapisywania stwórz repozytorium korzystające z `JdbcTemplate`.
     * Przygotuj podstronę ze statystykami, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
@@ -92,3 +92,5 @@
 7. Kantor - integration
 8. Kantor - web flow
 9. Kantor - security
+
+10. Bonus chatbot?
