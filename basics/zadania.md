@@ -88,12 +88,21 @@
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
     * Zabezpiecz dostęp do niej przy pomocy spring security.
     * Dodaj zależność `spring-boot-starter-security` i uruchom aplikację. Co się stało?
-    * 
+    * Wyłącz zabezpieczenia dla podstron które tego nie wymagają.
+    
+10. Kantor - wymiana walut
+    * Dodaj do swojej strony możliwość złożenia zamówienia na transakcję wymiany walut.
+    * Użytkownik wprowadza kwotę, walutę oraz walutę docelową, sprawdza ile pieniędzy otrzyma a następnie ma możliwość złożenia zamówienia.
+    * Nowe zamówienie dodawane jest do bazy danych.
+    
+11. Kantor - authentication
+    * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
+    * Wprowadź mechanizm autentykacji za pomocą konta Google.
 
+10. Kantor - user registration
 5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow
-9. Kantor - security
 10. Kantor - transakcje db
 11. Kantor wystaw json api dla porównywarki ofert kantorów
 

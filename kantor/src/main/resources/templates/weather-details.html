@@ -12,6 +12,7 @@
         <td th:text="${weather.getTemperature()} + '°' + ${scale}"></td>
     </table>
 
+    <a th:href="@{'/weather/book'(location=${weather.getLocationName()},temperature=${weather.getTemperature()},scale=${scale})} ">Zarezerwuj pogodę!</a>
 </main>
 
 </body>
