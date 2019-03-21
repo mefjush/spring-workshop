@@ -98,6 +98,13 @@
 11. Kantor - authentication
     * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
     * Wprowadź mechanizm autentykacji za pomocą konta Google.
+    * Zarejestruj swoją aplikację tutaj: https://console.developers.google.com/
+    * Zapisz wygenerowane dane dostępowe
+    * Skonfiguruj aplikację aby używała konta Google jako metody autentykacji.
+    * Kto ma teraz dostęp do statystyk sprawdzeń? Ogranicz dostęp tylko do administratora.
+    * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
+
+12.     * Dodaj informację kto jest zalogowany
 
 10. Kantor - user registration
 5. Kantor - testowanie

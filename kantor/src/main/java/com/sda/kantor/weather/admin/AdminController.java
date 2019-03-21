@@ -1,5 +1,7 @@
-package com.sda.kantor.weather;
+package com.sda.kantor.weather.admin;
 
+import com.sda.kantor.weather.SmartWeatherCheckRepository;
+import com.sda.kantor.weather.WeatherCheck;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -7,12 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-public class AdminWeatherController {
+public class AdminController {
 
     private final SmartWeatherCheckRepository smartWeatherCheckRepository;
+    private final AdminService adminService;
 
-    public AdminWeatherController(SmartWeatherCheckRepository smartWeatherCheckRepository) {
+    public AdminController(SmartWeatherCheckRepository smartWeatherCheckRepository, AdminService adminService) {
         this.smartWeatherCheckRepository = smartWeatherCheckRepository;
+        this.adminService = adminService;
     }
 
     @GetMapping("/admin/weather/stats")
@@ -45,5 +49,11 @@ public class AdminWeatherController {
                 .append("<br/>");
 
         return result.toString();
+    }
+
+    @GetMapping("/admin/contact")
+    @ResponseBody
+    public String contact() {
+        return "Phone number:" + adminService.getAdminPhoneNumber();
     }
 }
