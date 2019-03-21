@@ -36,6 +36,13 @@ Scenario:
      * Max converted amount, avg, top 5 currencies,
      * JDBC
      * Spring-magic
+
+9. Security
+     * After adding a dependency - login screen is added
+     * User: user 
+     * Password: [printed in the logs]
+     * To change: spring.security.user.name && spring.security.user.password
+     
 9. Test - test data insertion/query
 10. Auth - logged in user gets a better exchange rate (built in login? google?)
 11. Security 

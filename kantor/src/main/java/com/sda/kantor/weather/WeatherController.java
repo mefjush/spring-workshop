@@ -21,7 +21,7 @@ public class WeatherController {
         this.smartWeatherCheckRepository = smartWeatherCheckRepository;
     }
 
-    @GetMapping("/weather-simple")
+    @GetMapping("/weather/simple")
     public ModelAndView weather() {
         ModelAndView modelAndView = new ModelAndView("weather");
         List<Weather> weatherList = Arrays.asList(

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AboutController {
 
-    @GetMapping("/about-simple")
+    @GetMapping("/about/simple")
     @ResponseBody
     public String about() {
         String author = "Mateusza";

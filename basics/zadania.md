@@ -87,10 +87,14 @@
 9. Kantor - security 
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
     * Zabezpiecz dostęp do niej przy pomocy spring security.
+    * Dodaj zależność `spring-boot-starter-security` i uruchom aplikację. Co się stało?
+    * 
 
 5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow
 9. Kantor - security
+10. Kantor - transakcje db
+11. Kantor wystaw json api dla porównywarki ofert kantorów
 
 10. Bonus chatbot?
