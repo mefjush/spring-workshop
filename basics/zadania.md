@@ -79,7 +79,7 @@
          spring.datasource.password=???
          ```
     * Do zapisywania stwórz repozytorium korzystające z `JdbcTemplate`.
-    * Przygotuj podstronę ze statystykami, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
+    * Przygotuj podstronę ze statystykami `/admin/convertion/stats`, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
         * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
@@ -95,17 +95,23 @@
     * Użytkownik wprowadza kwotę, walutę oraz walutę docelową, sprawdza ile pieniędzy otrzyma a następnie ma możliwość złożenia zamówienia.
     * Nowe zamówienie dodawane jest do bazy danych.
     
-11. Kantor - authentication
+11. Kantor - authorization
     * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
+    * Stwórz w systemie 2 użytkowników: `user` oraz `admin`
+    * Zarówno zwykły użytkownik jak i admin mogą składać zamówienia
+    * Tylko admin ma dostęp do `/admin/convertion/stats`
+    * Dodaj do menu informację kto jest zalogowany.
+    
+12. Kantor - authentication (oauth)
     * Wprowadź mechanizm autentykacji za pomocą konta Google.
     * Zarejestruj swoją aplikację tutaj: https://console.developers.google.com/
     * Zapisz wygenerowane dane dostępowe
     * Skonfiguruj aplikację aby używała konta Google jako metody autentykacji.
-    * Kto ma teraz dostęp do statystyk sprawdzeń? Ogranicz dostęp tylko do administratora.
+    * Sprawdź czy użytkownik zalogowany ma prawidłowy dostęp do wszystkich podstron.
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
-12.     * Dodaj informację kto jest zalogowany ??? jak??
 
+6. @PreAuthorize
 5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow
