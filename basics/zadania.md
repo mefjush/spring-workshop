@@ -66,8 +66,15 @@
     * Do stworzonego pliku dodaj nazwę strony i proste menu. Oznacz je jako `th:fragment="header"`
     * W pozostałych widokach użyj zdefiniownego fragmentu np. `<div th:replace="fragments/layout :: header"></div>`
     * Zmień widok każdej z podstron tak aby używał tego fragmentu.
+ 
+TODO   
+8. Kantor - config
+    * Niestety ale kantor to nie instytucja charytatywna. 
+    * Uaktualnij swój projekt tak aby każdy kurs wymiany walut zawierał prowizję
+    * Lista kursów wymiany powinna zawierać teraz dwie wartości - kurs kupna i sprzedaży
+    * Wartość prowizji (spread) dostarczaj do aplikacji za pomocą pliku konfiguracyjnego `exchange.properties`
     
-8. Kantor - db / data
+9. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
     * Zapisuj zebrane informacje w bazie danych MySQL.
     * Dodaj do mavena zależność `spring-boot-starter-data-jpa`
@@ -84,25 +91,25 @@
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
     
-9. Kantor - security 
+10. Kantor - security 
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
     * Zabezpiecz dostęp do niej przy pomocy spring security.
     * Dodaj zależność `spring-boot-starter-security` i uruchom aplikację. Co się stało?
     * Wyłącz zabezpieczenia dla podstron które tego nie wymagają.
     
-10. Kantor - wymiana walut
+11. Kantor - wymiana walut
     * Dodaj do swojej strony możliwość złożenia zamówienia na transakcję wymiany walut.
     * Użytkownik wprowadza kwotę, walutę oraz walutę docelową, sprawdza ile pieniędzy otrzyma a następnie ma możliwość złożenia zamówienia.
-    * Nowe zamówienie dodawane jest do bazy danych.
+    * Nowe zamówienie dodawane jest do bazy danych. 
     
-11. Kantor - authorization
+12. Kantor - authorization
     * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
     * Stwórz w systemie 2 użytkowników: `user` oraz `admin`
     * Zarówno zwykły użytkownik jak i admin mogą składać zamówienia
     * Tylko admin ma dostęp do `/admin/convertion/stats`
     * Dodaj do menu informację kto jest zalogowany.
     
-12. Kantor - authentication (oauth)
+13. Kantor - authentication (oauth)
     * Wprowadź mechanizm autentykacji za pomocą konta Google.
     * Zarejestruj swoją aplikację tutaj: https://console.developers.google.com/
     * Zapisz wygenerowane dane dostępowe
@@ -110,13 +117,42 @@
     * Sprawdź czy użytkownik zalogowany ma prawidłowy dostęp do wszystkich podstron.
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
+TODO
+14. Kantor - transakcje
+    * Zaprojektuj podstronę administratora, która wyświetli wszystkie zamówienia.
+    * Obok zamówienia umieść przycisk "Zrealizuj", który oznaczy zamówienie jako zrealizowane.
+    * Zaprojektuj tabelę `wallet`, która reprezentuje stan konta (portfel) kantoru.
+    * Uaktualniaj tabelę `wallet` podczas realizacji zamówienia. 
+    * Co zrobisz jeśli w portfelu brakuje pieniędzy na realizację zamówienia?
+    * Zabezpiecz metodę "realizacji zamówienia" adnotacją `@PreAuthorize` - pozwalającą na wywołanie tej metody tylko użytkownikom posiadających rolę `ADMIN`
 
-config ze spreadem
-6. @PreAuthorize
+TODO
+15. Kantor - web flow
+    * Składanie zamówień działa ale ma pewną wadę.
+    * Co się stanie gdy kilka razy odświeżysz stronę zamówienia?
+    * Zaprojektuj "idiotoodporne" rozwiązanie problemu przy pomocy Spring Web Flow
+
+16. Kantor - json api
+    * W internecie pojawiła się _Porównywarka Kantorów™_ 
+    * Aby nie stracić potencjalnych klientów chcemy udostępnić nasze kursy dla _Porównywarki Kantorów™_ 
+    * W tym celu dodaj endpoint `/api/exchange/rates/PLN` który zwóci json z aktualnymi kursami
+    * Zwracany obiekt powinien mieć postać: 
+        ```
+        {
+          "EUR": {
+            "sell": 4.5,
+            "buy": 4.2
+          },
+          "USD": {
+            "sell": 3.9,
+            "buy": 3.7
+          }
+        }
+        ```
+
+20. Kantor - chatbot
+    * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
+    * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadmomością z aktualną ofertą wymiany, np. `2.5 EUR` 
+    
 5. Kantor - testowanie
 7. Kantor - integration
-8. Kantor - web flow
-10. Kantor - transakcje db
-11. Kantor wystaw json api dla porównywarki ofert kantorów
-
-10. Bonus chatbot?
