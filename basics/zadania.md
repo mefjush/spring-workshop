@@ -111,6 +111,7 @@
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
 
+config ze spreadem
 6. @PreAuthorize
 5. Kantor - testowanie
 7. Kantor - integration
