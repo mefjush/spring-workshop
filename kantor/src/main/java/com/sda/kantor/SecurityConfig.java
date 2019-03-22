@@ -16,13 +16,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /* for static unprotected resources */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**", "/", "/weather/**", "/about/**");
+        web.ignoring().antMatchers("/css/**"); //security completely disabled
     }
 
     /* for google oauth */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/", "/weather/**", "/about/**").permitAll()     // security still on but all permitted
                 .antMatchers("/admin/**").access("hasRole('ADMIN')") // show that users don't have an access
                 .anyRequest().authenticated()
                 .and()

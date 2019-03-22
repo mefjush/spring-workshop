@@ -104,9 +104,8 @@
     * Kto ma teraz dostęp do statystyk sprawdzeń? Ogranicz dostęp tylko do administratora.
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
-12.     * Dodaj informację kto jest zalogowany
+12.     * Dodaj informację kto jest zalogowany ??? jak??
 
-10. Kantor - user registration
 5. Kantor - testowanie
 7. Kantor - integration
 8. Kantor - web flow
