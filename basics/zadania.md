@@ -67,12 +67,11 @@
     * W pozostałych widokach użyj zdefiniownego fragmentu np. `<div th:replace="fragments/layout :: header"></div>`
     * Zmień widok każdej z podstron tak aby używał tego fragmentu.
  
-TODO   
 8. Kantor - config
     * Niestety ale kantor to nie instytucja charytatywna. 
     * Uaktualnij swój projekt tak aby każdy kurs wymiany walut zawierał prowizję
     * Lista kursów wymiany powinna zawierać teraz dwie wartości - kurs kupna i sprzedaży
-    * Wartość prowizji (spread) dostarczaj do aplikacji za pomocą pliku konfiguracyjnego `exchange.properties`
+    * Ustaw wartość prowizji (spread) w pliku konfiguracyjnym `application.properties`
     
 9. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
@@ -90,6 +89,12 @@ TODO
         * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
+    
+10. Kantor - test
+    * Napisz test integracyjny dla repozytoriów stworzonych w poprzednim zadaniu.
+    * Przetestuj czy możesz zapisać a następnie odczytać dane z bazy danych.
+    * Sprawdź zawartość bazy danych po kilkukrotnym uruchomieniu testu. Jakieś spostrzeżenia?
+    * Wymuś rollback zawartości bazy danych po każdym teście. Użyj adnotacji `@Transactional`.
     
 10. Kantor - security 
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
@@ -154,5 +159,4 @@ TODO
     * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
     * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadmomością z aktualną ofertą wymiany, np. `2.5 EUR` 
     
-5. Kantor - testowanie
 7. Kantor - integration

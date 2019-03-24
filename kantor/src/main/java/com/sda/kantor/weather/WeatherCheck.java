@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Objects;
 
 @Entity
 public class WeatherCheck {
@@ -50,5 +51,19 @@ public class WeatherCheck {
     @Override
     public String toString() {
         return location + " " + scale;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        WeatherCheck that = (WeatherCheck) o;
+        return Objects.equals(location, that.location) &&
+                Objects.equals(scale, that.scale);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(location, scale);
     }
 }
