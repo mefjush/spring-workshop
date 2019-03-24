@@ -52,3 +52,9 @@ Scenario:
 19. Integration ?
      * Send an e-mail on money order?
 20. bunus? war/tomcat deployments
+
+
+Ideas:
+- demo dependency injection?
+- superclient gets better exchange rates
+- 

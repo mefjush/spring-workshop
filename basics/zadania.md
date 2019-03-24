@@ -33,7 +33,7 @@
     * (Opcjonalnie) Dodaj mapę z dojazdem. (Google maps -> Wybierz miejsce -> Embed)
     
 3. Kantor - strony dynamiczne
-    * Dodaj podstronę /contact. Tym razem będzie to strona dynamiczna. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
+    * Dodaj podstronę `/contact`. Tym razem będzie to strona dynamiczna. Dodaj informację jaki mamy dziś dzień tygodnia i czy kantor jest dziś otwarty.
     * Zacznij od prostego rozwiązania i zwróć prosty napis.
     * Gotowe? Teraz zmodyfikuj swoje rozwiązanie tak aby używało wzorca MVC. 
     * Użyjemy Thymeleaf jako silnika widoku. W tym celu dodaj do mavena zależność `spring-boot-starter-thymeleaf`.
@@ -69,9 +69,9 @@
  
 8. Kantor - config
     * Niestety ale kantor to nie instytucja charytatywna. 
-    * Uaktualnij swój projekt tak aby każdy kurs wymiany walut zawierał prowizję
+    * Uaktualnij swój projekt tak aby każdy kurs wymiany walut był powiększony o prowizję
     * Lista kursów wymiany powinna zawierać teraz dwie wartości - kurs kupna i sprzedaży
-    * Ustaw wartość prowizji (spread) w pliku konfiguracyjnym `application.properties`
+    * Ustawiaj wartość prowizji (spread) w pliku konfiguracyjnym `application.properties`
     
 9. Kantor - db / data
     * Dla celów statystycznych chcemy zbierać dane o tym jakie kwoty i waluty przeliczają nasi odwiedzający.
@@ -131,7 +131,7 @@ TODO
     * Co zrobisz jeśli w portfelu brakuje pieniędzy na realizację zamówienia?
     * Zabezpiecz metodę "realizacji zamówienia" adnotacją `@PreAuthorize` - pozwalającą na wywołanie tej metody tylko użytkownikom posiadających rolę `ADMIN`
 
-TODO
+TODO https://github.com/skprasadu/spring-mvc-examples/tree/master/bookstore-example-with-mvc-webflow
 16. Kantor - web flow
     * Składanie zamówień działa ale ma pewną wadę.
     * Co się stanie gdy kilka razy odświeżysz stronę zamówienia?
@@ -161,3 +161,5 @@ TODO
     
 TODO
 7. Kantor - integration
+
+Zadanie na stronę błędu
