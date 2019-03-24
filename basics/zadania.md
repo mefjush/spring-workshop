@@ -96,25 +96,25 @@
     * Sprawdź zawartość bazy danych po kilkukrotnym uruchomieniu testu. Jakieś spostrzeżenia?
     * Wymuś rollback zawartości bazy danych po każdym teście. Użyj adnotacji `@Transactional`.
     
-10. Kantor - security 
+11. Kantor - security 
     * Nowo dodana podstrona zawiera dość wrażliwe dane.
     * Zabezpiecz dostęp do niej przy pomocy spring security.
     * Dodaj zależność `spring-boot-starter-security` i uruchom aplikację. Co się stało?
     * Wyłącz zabezpieczenia dla podstron które tego nie wymagają.
     
-11. Kantor - wymiana walut
+12. Kantor - wymiana walut
     * Dodaj do swojej strony możliwość złożenia zamówienia na transakcję wymiany walut.
     * Użytkownik wprowadza kwotę, walutę oraz walutę docelową, sprawdza ile pieniędzy otrzyma a następnie ma możliwość złożenia zamówienia.
     * Nowe zamówienie dodawane jest do bazy danych. 
     
-12. Kantor - authorization
+13. Kantor - authorization
     * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
     * Stwórz w systemie 2 użytkowników: `user` oraz `admin`
     * Zarówno zwykły użytkownik jak i admin mogą składać zamówienia
     * Tylko admin ma dostęp do `/admin/convertion/stats`
     * Dodaj do menu informację kto jest zalogowany.
     
-13. Kantor - authentication (oauth)
+14. Kantor - authentication (oauth)
     * Wprowadź mechanizm autentykacji za pomocą konta Google.
     * Zarejestruj swoją aplikację tutaj: https://console.developers.google.com/
     * Zapisz wygenerowane dane dostępowe
@@ -123,7 +123,7 @@
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
 TODO
-14. Kantor - transakcje
+15. Kantor - transakcje
     * Zaprojektuj podstronę administratora, która wyświetli wszystkie zamówienia.
     * Obok zamówienia umieść przycisk "Zrealizuj", który oznaczy zamówienie jako zrealizowane.
     * Zaprojektuj tabelę `wallet`, która reprezentuje stan konta (portfel) kantoru.
@@ -132,12 +132,12 @@ TODO
     * Zabezpiecz metodę "realizacji zamówienia" adnotacją `@PreAuthorize` - pozwalającą na wywołanie tej metody tylko użytkownikom posiadających rolę `ADMIN`
 
 TODO
-15. Kantor - web flow
+16. Kantor - web flow
     * Składanie zamówień działa ale ma pewną wadę.
     * Co się stanie gdy kilka razy odświeżysz stronę zamówienia?
     * Zaprojektuj "idiotoodporne" rozwiązanie problemu przy pomocy Spring Web Flow
 
-16. Kantor - json api
+17. Kantor - json api
     * W internecie pojawiła się _Porównywarka Kantorów™_ 
     * Aby nie stracić potencjalnych klientów chcemy udostępnić nasze kursy dla _Porównywarki Kantorów™_ 
     * W tym celu dodaj endpoint `/api/exchange/rates/PLN` który zwóci json z aktualnymi kursami
@@ -159,4 +159,5 @@ TODO
     * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
     * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadmomością z aktualną ofertą wymiany, np. `2.5 EUR` 
     
+TODO
 7. Kantor - integration
