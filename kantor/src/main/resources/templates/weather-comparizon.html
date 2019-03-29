@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+
+<div th:replace="fragments/layout :: header"></div>
+<main class="container">
+
+    <h2>Twoje porównanie pogody</h2>
+    <table>
+        <tr>
+            <td>Miejsce</td>
+            <td th:each="weather: ${weatherList}" th:text="${weather.getLocationName()}"></td>
+        </tr>
+        <tr>
+            <td>Temperatura</td>
+            <td th:each="weather: ${weatherList}" th:text="${weather.getTemperature()}"></td>
+        </tr>
+    </table>
+
+</main>
+
+</body>
+</html>

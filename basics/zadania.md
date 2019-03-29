@@ -122,7 +122,6 @@
     * Sprawdź czy użytkownik zalogowany ma prawidłowy dostęp do wszystkich podstron.
     * Wskazówki: https://www.baeldung.com/spring-security-5-oauth2-login
 
-TODO
 15. Kantor - transakcje
     * Zaprojektuj podstronę administratora, która wyświetli wszystkie zamówienia.
     * Obok zamówienia umieść przycisk "Zrealizuj", który oznaczy zamówienie jako zrealizowane.

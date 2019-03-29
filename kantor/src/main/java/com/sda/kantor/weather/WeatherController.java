@@ -3,6 +3,7 @@ package com.sda.kantor.weather;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Arrays;
@@ -58,6 +59,15 @@ public class WeatherController {
             }
         }
         throw new RuntimeException("No such location!");
+    }
+
+    @GetMapping("/weather/comparizon/{location1}/{location2}")
+    public ModelAndView comparizon(@PathVariable("location1") String location1, @PathVariable("location2") String location2) {
+        List<Weather> comparizon = weatherService.getComparizon(location1, location2);
+        ModelAndView modelAndView = new ModelAndView("weather-comparizon");
+        modelAndView.addObject("weatherList", comparizon);
+        return modelAndView;
+
     }
 
     private int celciusToFarenheit(Weather weather) {
