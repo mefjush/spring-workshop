@@ -143,11 +143,11 @@ TODO https://github.com/skprasadu/spring-mvc-examples/tree/master/bookstore-exam
     * Zwracany obiekt powinien mieć postać: 
         ```
         {
-          "EUR": {
+          "eur": {
             "sell": 4.5,
             "buy": 4.2
           },
-          "USD": {
+          "usd": {
             "sell": 3.9,
             "buy": 3.7
           }
