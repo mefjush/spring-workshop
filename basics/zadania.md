@@ -130,7 +130,6 @@
     * Co zrobisz jeśli w portfelu brakuje pieniędzy na realizację zamówienia?
     * Zabezpiecz metodę "realizacji zamówienia" adnotacją `@PreAuthorize` - pozwalającą na wywołanie tej metody tylko użytkownikom posiadających rolę `ADMIN`
 
-TODO https://github.com/skprasadu/spring-mvc-examples/tree/master/bookstore-example-with-mvc-webflow
 16. Kantor - web flow
     * Składanie zamówień działa ale ma pewną wadę.
     * Co się stanie gdy kilka razy odświeżysz stronę zamówienia?
@@ -158,7 +157,7 @@ TODO https://github.com/skprasadu/spring-mvc-examples/tree/master/bookstore-exam
     * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
     * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadomością z aktualną ofertą wymiany, np. `2.5 EUR` 
     
-TODO
+TODO 
 21. Kantor - integration
     * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
     * Kantor powinien śledzić kurs wymiany walut. Jeżeli kurs spadnie o ponad 10% w krótkim odstępie czasu - jest to sytuacja alarmowa.

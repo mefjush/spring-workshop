@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
 import java.util.Arrays;
@@ -64,6 +65,23 @@ public class WeatherService {
             throw new RuntimeException("Could not create comparizon for " + location1 + " and " + location2);
         }
         return list;
+    }
+
+    public Weather getWeather(String location, String scale) {
+        List<Weather> weatherList = getWeatherList();
+        for (Weather weather : weatherList) {
+            if (weather.getLocationName().equals(location)) {
+                if (scale.equals("F")) {
+                    weather = new Weather(weather.getLocationName(), celciusToFarenheit(weather));
+                }
+                return weather;
+            }
+        }
+        return null;
+    }
+
+    private int celciusToFarenheit(Weather weather) {
+        return weather.getTemperature() * 9 / 5 + 32;
     }
 
     private static class WeatherResponse {

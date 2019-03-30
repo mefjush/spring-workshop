@@ -46,17 +46,12 @@ public class WeatherController {
     public ModelAndView custom(@Param("location") String location, @Param("scale") String scale) {
 //        weatherCheckRepository.saveWeatherCheck(location, scale);
         smartWeatherCheckRepository.save(new WeatherCheck(location, scale));
-        List<Weather> weatherList = weatherService.getWeatherList();
-        for (Weather weather : weatherList) {
-            if (weather.getLocationName().equals(location)) {
-                if (scale.equals("F")) {
-                    weather = new Weather(weather.getLocationName(), celciusToFarenheit(weather));
-                }
-                ModelAndView modelAndView = new ModelAndView("weather-details");
-                modelAndView.addObject("weather", weather);
-                modelAndView.addObject("scale", scale);
-                return modelAndView;
-            }
+        Weather weather = weatherService.getWeather(location, scale);
+        if (weather != null) {
+            ModelAndView modelAndView = new ModelAndView("weather-details");
+            modelAndView.addObject("weather", weather);
+            modelAndView.addObject("scale", scale);
+            return modelAndView;
         }
         throw new RuntimeException("No such location!");
     }
@@ -67,10 +62,5 @@ public class WeatherController {
         ModelAndView modelAndView = new ModelAndView("weather-comparizon");
         modelAndView.addObject("weatherList", comparizon);
         return modelAndView;
-
-    }
-
-    private int celciusToFarenheit(Weather weather) {
-        return weather.getTemperature() * 9 / 5 + 32;
     }
 }

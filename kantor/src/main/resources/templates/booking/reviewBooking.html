@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+<div th:replace="fragments/layout :: header"></div>
+
+<p>Rezerwujesz <span th:text="${temperature}"></span>°C w lokalizacji: <span th:text="${reservation.location}"></span>.</p>
+
+<form id="triggerform" method="post" th:action="${flowExecutionUrl}">
+    <button type="submit" name="_eventId_revise">Zmień</button>
+    <button type="submit" name="_eventId_confirm">Zatwierdź</button>
+    <button type="submit" name="_eventId_cancel">Anuluj</button>
+</form>
+
+</body>
+</html>

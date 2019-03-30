@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+<div th:replace="fragments/layout :: header"></div>
+<form id="triggerform" method="post" th:action="${flowExecutionUrl}" th:object="${reservation}">
+    <label for="location">Lokalizacja</label>
+    <input id="location" name="location" th:field="*{location}"/>
+    <button type="submit" name="_eventId_proceed">Dalej</button>
+    <button type="submit" name="_eventId_cancel" >Anuluj</button>
+</form>
+</body>
