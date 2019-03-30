@@ -156,9 +156,14 @@ TODO https://github.com/skprasadu/spring-mvc-examples/tree/master/bookstore-exam
 
 20. Kantor - chatbot
     * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
-    * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadmomością z aktualną ofertą wymiany, np. `2.5 EUR` 
+    * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadomością z aktualną ofertą wymiany, np. `2.5 EUR` 
     
 TODO
-7. Kantor - integration
+21. Kantor - integration
+    * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
+    * Kantor powinien śledzić kurs wymiany walut. Jeżeli kurs spadnie o ponad 10% w krótkim odstępie czasu - jest to sytuacja alarmowa.
+    * W takim wypadku powinien zostać wysłany mail do administratora.
+    * (Opcjonalnie) Jeżeli zmiana nastąpi o ponad 20% wstrzymaj możliwość przeprowadzania jakichkolwiek transakcji w swoim systemie.
+    * (Opcjonalnie) Pobieraj dane o kursie walut z 2 różnych źródeł. Jeśli różnica kursowa wynosi ponad 1% zwiększ pobieraną prowizję o 1.5%.
 
-Zadanie na stronę błędu
+22. Wyświetlaj miłą dla oka stronę z informacją o błędzie, gdy w Twojej aplikacji wystąpi błąd.
