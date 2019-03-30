@@ -1,0 +1,5 @@
+{ "weatherList": [
+  { "name": "Warsaw", "temperature": 20 },
+  { "name": "Wroclaw", "temperature": 90 },
+  { "name": "Bialystok", "temperature": -10 }
+]}

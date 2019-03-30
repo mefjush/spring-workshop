@@ -16,7 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     /* for static unprotected resources */
     @Override
     public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/css/**"); //security completely disabled
+        web.ignoring().antMatchers("/css/**", "/json/**"); //security completely disabled
     }
 
     /* for google oauth */

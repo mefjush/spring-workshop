@@ -26,6 +26,8 @@ public class WeatherService {
     */
 
     private static final String DEFAULT_SCALE = "C";
+    public static final String WEATHER_URL = "http://localhost:8080/json/fake-weather.json";
+//    public static final String WEATHER_URL = "http://www.mocky.io/v2/5c8e7a9d3000000d001b0e5b";
 
     private final RestTemplate restTemplate;
     private final int temperatureAdjustmentPercent;
@@ -40,7 +42,8 @@ public class WeatherService {
 
     public List<Weather> getWeatherList() {
         //TODO String response will also work but will require manual parsing
-        WeatherResponse weatherResponse = restTemplate.getForObject("http://www.mocky.io/v2/5c8e7a9d3000000d001b0e5b", WeatherResponse.class);
+//        WeatherResponse weatherResponse = restTemplate.getForObject(, WeatherResponse.class);
+        WeatherResponse weatherResponse = restTemplate.getForObject(WEATHER_URL, WeatherResponse.class);
         List<Weather> originalWeather = weatherResponse.weatherList;
         List<Weather> adjustedWeather = originalWeather.stream()
                 .map(w -> new Weather(w.getLocationName(), adjustTemperature(w.getTemperature())))
