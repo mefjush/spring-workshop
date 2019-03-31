@@ -2,6 +2,7 @@ package com.sda.kantor;
 
 import com.sda.kantor.weather.Weather;
 import com.sda.kantor.weather.WeatherService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.aggregator.CorrelationStrategy;
@@ -11,11 +12,10 @@ import org.springframework.integration.core.MessageSource;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.integration.dsl.Pollers;
-import org.springframework.integration.handler.GenericHandler;
+import org.springframework.integration.mail.dsl.Mail;
 import org.springframework.integration.splitter.AbstractMessageSplitter;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHeaders;
-
 import org.springframework.messaging.support.GenericMessage;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IntegrationConfig {
 
     @Bean
-    public IntegrationFlow weatherChecker(WeatherService weatherService) {
+    public IntegrationFlow weatherChecker(WeatherService weatherService, @Value("${mail.gmail.user}") String gmailUser, @Value("${mail.gmail.password}") String gmailPassword) {
         AtomicInteger atomicInteger = new AtomicInteger(0);
 
         MessageSource<Weather> wroclawWeather = () -> {
@@ -51,11 +51,6 @@ public class IntegrationConfig {
             return weather.getLocationName();
         };
 
-        GenericHandler<Integer> highDiffHandler = (diff, messageHeaders) -> {
-            System.out.println("High temperature diff: " + diff);
-            return null;
-        };
-
         AbstractMessageSplitter weatherDuplication = new AbstractMessageSplitter() {
             @Override
             protected Object splitMessage(Message<?> message) {
@@ -75,7 +70,15 @@ public class IntegrationConfig {
                         .expireGroupsUponCompletion(true)
                 )
                 .filter(diff -> Math.abs((Integer) diff) > 5)
-                .handle(highDiffHandler)
+                .transform(diff -> "High temperature diff: " + diff)
+                .enrichHeaders(Mail.headers()
+                        .subject("Weather mail")
+                        .to("mefjush@gmail.com")
+                        .from("mefjush@gmail.com"))
+                .handle(Mail.outboundAdapter("smtp.gmail.com")
+                        .port(465)
+                        .protocol("smtps")
+                        .credentials(gmailUser, gmailPassword))
                 .get();
     }
 }

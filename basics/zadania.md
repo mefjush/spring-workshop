@@ -160,6 +160,7 @@
 20. Kantor - integration
     * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
     * Za każdym razem gdy ktoś wykona rezerwację na sumę > 1000 PLN wyślij maila do administratora
+    * (Opcjonalnie) Oprócz wysłania maila dodatkowo odtwarzaj fanfary.
 
 21. (Opcjonalnie) Kantor - integration
     * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
