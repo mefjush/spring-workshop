@@ -153,12 +153,15 @@
         }
         ```
 
-20. Kantor - chatbot
+19. Kantor - chatbot
     * W ramach swojej aplikacji stwórz chatbota, który połączy się z chatem na stronie http://spring-ws-chat.herokuapp.com/
     * Gdy ktoś napisze `!kantor toEUR 10` chatbot powinien odpowiedzieć wiadomością z aktualną ofertą wymiany, np. `2.5 EUR` 
     
-TODO 
-21. Kantor - integration
+20. Kantor - integration
+    * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
+    * Za każdym razem gdy ktoś wykona rezerwację na sumę > 1000 PLN wyślij maila do administratora
+
+21. (Opcjonalnie) Kantor - integration
     * Zaprojektuj przy pomocy Spring Integration następujący scenariusz
     * Kantor powinien śledzić kurs wymiany walut. Jeżeli kurs spadnie o ponad 10% w krótkim odstępie czasu - jest to sytuacja alarmowa.
     * W takim wypadku powinien zostać wysłany mail do administratora.
