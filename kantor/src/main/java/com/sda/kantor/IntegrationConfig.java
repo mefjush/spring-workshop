@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class IntegrationConfig {
 
     @Bean
-    public IntegrationFlow weatherChecker(WeatherService weatherService, @Value("${mail.gmail.user}") String gmailUser, @Value("${mail.gmail.password}") String gmailPassword) {
+    public IntegrationFlow weatherChecker(WeatherService weatherService, @Value("${mail.gmail.user}") String gmailUser, @Value("${mail.gmail.password}") String gmailPassword, @Value("${mail.address}") String mailAddres) {
         AtomicInteger atomicInteger = new AtomicInteger(0);
 
         MessageSource<Weather> wroclawWeather = () -> {
@@ -73,8 +73,8 @@ public class IntegrationConfig {
                 .transform(diff -> "High temperature diff: " + diff)
                 .enrichHeaders(Mail.headers()
                         .subject("Weather mail")
-                        .to("mefjush@gmail.com")
-                        .from("mefjush@gmail.com"))
+                        .to(mailAddres)
+                        .from(gmailUser))
                 .handle(Mail.outboundAdapter("smtp.gmail.com")
                         .port(465)
                         .protocol("smtps")
