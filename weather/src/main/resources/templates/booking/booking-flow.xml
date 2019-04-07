@@ -1,0 +1,31 @@
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow.xsd">
+
+    <!--good example: https://github.com/arnaldop/enhanced-pet-clinic-->
+
+    <on-start>
+        <evaluate expression="new com.sda.weather.flow.Reservation()" result="flowScope.reservation" />
+    </on-start>
+
+    <view-state id="enterBookingDetails" view="booking/enterBookingDetails" model="reservation">
+        <transition on="proceed" to="reviewBooking">
+            <evaluate expression="weatherService.getWeather(reservation.location, 'C').temperature" result="flowScope.temperature" />
+        </transition>
+        <transition on="cancel" to="bookingCancelled" />
+    </view-state>
+
+    <view-state id="reviewBooking" view="booking/reviewBooking" model="reservation">
+        <transition on="confirm" to="bookingConfirmed">
+            <evaluate expression="weatherBookRepository.saveWeatherBook(reservation.location, temperature, 'C')"/>
+        </transition>
+        <transition on="revise" to="enterBookingDetails" />
+        <transition on="cancel" to="bookingCancelled" />
+    </view-state>
+
+    <end-state id="bookingConfirmed" view="booking/bookingConfirmed" />
+
+    <end-state id="bookingCancelled" view="booking/bookingCancelled" />
+
+</flow>
