@@ -23,13 +23,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/", "/weather/**", "/about/**").permitAll()     // security still on but all permitted
+                .antMatchers("/", "/weather/**", "/about/**", "/h2_console/**").permitAll()     // security still on but all permitted
                 .antMatchers("/admin/**").access("hasRole('ADMIN')") // show that users don't have an access
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .and()
                 .oauth2Login();
+
+        //for h2 console only
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 
     /* for testing the roles */
