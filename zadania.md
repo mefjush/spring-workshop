@@ -170,3 +170,12 @@
     * (Opcjonalnie) Pobieraj dane o kursie walut z 2 różnych źródeł. Jeśli różnica kursowa wynosi ponad 1% zwiększ pobieraną prowizję o 1.5%.
 
 22. Wyświetlaj miłą dla oka stronę z informacją o błędzie, gdy w Twojej aplikacji wystąpi błąd.
+
+23. (Opcjonalnie) Lombard
+    * Twój kantor rozszerza działalność. Dodaj podstronę z usługami lombardu.
+    * Wyświetlaj listę oferowanych na sprzedaż przedmiotów wraz z cenami.
+    * Daj administratorowi możliwość zaznaczenia przedmiotu jako sprzedanego. 
+    * Dodaj formularz wyceny. Pobieraj nazwę i opis przedmiotu oraz dane kontaktowe.
+    * Wyświetlaj listę próśb o wycenę tylko adminowi.
+    * Daj możliwość odpowiedzi na prośbę o wycenę. Np. "Za ten telefon oferuję 150zł"
+    * Wystawiaj przedmioty na sprzedaż dopiero po 30 dniach od przyjęcia w zastaw.
