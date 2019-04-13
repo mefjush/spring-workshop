@@ -9,22 +9,21 @@ import java.util.List;
 @Service
 public class ExchangeRatesService {
 
+    private static final String URL = "https://api.exchangeratesapi.io/latest?base=PLN";
+
     private static class ExchangeRates {
         //TODO dodać pola które odpowiadają zawartości z pod linku
         
     }
 
-    // https://api.exchangeratesapi.io/latest?base=PLN
-
     private RestTemplate restTemplate;
 
-    //TODO zadeklarowac Bean w KantorApplication
     public ExchangeRatesService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     public List<Rate> getRates() {
-        ExchangeRates exchangeRates = restTemplate.getForObject("https://api.exchangeratesapi.io/latest?base=PLN", ExchangeRates.class);
+        ExchangeRates exchangeRates = restTemplate.getForObject(URL, ExchangeRates.class);
 
         //TODO skonstruować listę Rates na podstawie zawartości ExchangeRates
 
