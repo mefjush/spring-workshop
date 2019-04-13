@@ -1,11 +1,14 @@
 package pl.sda.lottery.lotteries;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pl.sda.audio.AudioPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pl.gov.TaxOffice;
 import pl.sda.lottery.RandomNumberGenerator;
 
+@Service
 public class HighRiskLottery implements Lottery {
 
     private final Logger logger = LoggerFactory.getLogger(HighRiskLottery.class);

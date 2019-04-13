@@ -1,6 +1,6 @@
 package example;
 
-/*
+
 import org.springframework.stereotype.Component;
 
 // Sposób 2 na tworzenie komponentów zarządzanych przez Springa
@@ -11,4 +11,3 @@ public class MyComponent {
         System.out.println("Hi there from MyComponent!");
     }
 }
-*/

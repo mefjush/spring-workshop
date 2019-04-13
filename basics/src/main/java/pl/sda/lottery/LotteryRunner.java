@@ -1,25 +1,42 @@
 package pl.sda.lottery;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import pl.gov.TaxOffice;
 import pl.sda.lottery.lotteries.*;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+@Service
 public class LotteryRunner {
 
-    private List<Lottery> lotteries = Arrays.asList(
-            new LowRiskLottery(),
-            new HighRiskLottery(),
-            new SpanishLottery(),
-            new ZonkLottery()
-    );
+
+    private List<Lottery> lotteries;
+    private TaxOffice taxOffice;
+
+
+    @Autowired
+    public LotteryRunner(List<Lottery> lotteries, TaxOffice taxOffice) {
+        this.lotteries = lotteries;
+        this.taxOffice = taxOffice;
+    }
+
+    @Autowired
+    public void setTaxOffice(TaxOffice taxOffice) {
+        this.taxOffice = taxOffice;
+    }
+
     private Scanner scanner = new Scanner(System.in);
 
     public void run() {
         while (true) {
             Lottery lottery = promptForLottery();
             int budget = promptForBudget();
+            if (budget > 500) {
+                taxOffice.notifyLargeTransaction("Duza kasa na loterii", budget);
+            }
 
             int cost = lottery.getTicketCost();
             while (cost <= budget) {
