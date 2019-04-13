@@ -16,7 +16,7 @@
     3. Zakończenie
         * Załóżmy jednak, że nie chcemy by nasz `RandomNumberGenerator` był singletonem. Chcemy posiadać wiele instancji tej klasy. Wprowadź zmianę przy pomocy adnotacji `@Scope`. 
         * (Opcjonalnie) Wymyśl własny typ loterii i dodaj go do aplikacji.
-        * (Opcjonaline) Dodaj klasę `Committee` reprezentującą Komisję Kontroli Gier i Zakładów. Powiadom komisję o wyniku każdego głosowania. 
+        * (Opcjonaline) Dodaj klasę `Committee` reprezentującą Komisję Kontroli Gier i Zakładów. Powiadom komisję o wyniku każdego losowania. 
     
 1. Kantor - Spring Boot 
     * Będziemy tworzyć aplikację kantoru wymiany walut.
@@ -58,14 +58,13 @@
     * Dodaj podstronę z formularzem do przeliczania walut. 
     * Daj użytkownikowi możliwość wybrania kwoty, waluty i waluty docelowej. 
     * Przelicz podaną kwotę i wyświetl uzytkownikowi.
-    * (Opcjonalnie) Co gdy użytkownik poda nieprawidłową wartość? Wyświetl komunikat stosowny komunikat.
+    * (Opcjonalnie) Co gdy użytkownik poda nieprawidłową wartość? Wyświetl stosowny komunikat.
     
 7. Kantor - rozszerzanie template'ów
     * Twoja strona ma już kilka podstron - chcielibyśmy móc łatwo w niej nawigować.
     * W katalogu `templates/fragments` dodaj `layout.html` - Twój ogólny zarys strony.
     * Do stworzonego pliku dodaj nazwę strony i proste menu. Oznacz je jako `th:fragment="header"`
-    * W pozostałych widokach użyj zdefiniownego fragmentu np. `<div th:replace="fragments/layout :: header"></div>`
-    * Zmień widok każdej z podstron tak aby używał tego fragmentu.
+    * Teraz chcielibyśmy użyć tego fragmentu (nazwa strony + menu) na wszystkich podstronach. W tym celu w we wszystkich widokach użyj zdefiniownego fragmentu np. `<div th:replace="fragments/layout :: header"></div>`
  
 8. Kantor - config
     * Niestety ale kantor to nie instytucja charytatywna. 
@@ -85,7 +84,7 @@
          spring.datasource.password=???
          ```
     * Do zapisywania stwórz repozytorium korzystające z `JdbcTemplate`.
-    * Przygotuj podstronę ze statystykami `/admin/convertion/stats`, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
+    * Przygotuj podstronę ze statystykami `/admin/conversion/stats`, tym razem przy pomocy repozytorium rozszerzającego `CrudRepository<?, Integer>`
         * Wyświetl jaka jest najpopularniejsza konwertowana waluta.
         * Jaka jest średnia przeliczana kwota. 
         * Suma wszystkich przeliczeń z PLN.
@@ -111,7 +110,7 @@
     * Ogranicz możliwość składania zamówienia tylko zarejestrowanym użytkownikom.
     * Stwórz w systemie 2 użytkowników: `user` oraz `admin`
     * Zarówno zwykły użytkownik jak i admin mogą składać zamówienia
-    * Tylko admin ma dostęp do `/admin/convertion/stats`
+    * Tylko admin ma dostęp do `/admin/conversion/stats`
     * Dodaj do menu informację kto jest zalogowany.
     
 14. Kantor - authentication (oauth)
