@@ -11,7 +11,7 @@ public interface CurrencyCheckRepository extends CrudRepository<CurrencyCheck, I
 
     long countByCurrency(String currency);
 
-    @Query("SELECT c.currency FROM CurrencyCheck c GROUP BY c.currency ORDER BY COUNT(c.currency)")
+    @Query("SELECT c.currency FROM CurrencyCheck c GROUP BY c.currency ORDER BY COUNT(c.currency) DESC")
     List<String> getMostPopularCurrency();
 
 }
