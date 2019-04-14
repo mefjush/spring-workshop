@@ -3,12 +3,11 @@
 <head th:replace="fragments/layout :: head"></head>
 <body>
     <div th:replace="fragments/layout :: menu"></div>
-    <h1>Kursy wymiany walut</h1>
-    <table>
-        <tr th:each="rate : ${rates}">
-            <td th:text="${rate.getName()}"></td>
-            <td th:text="${rate.getRate()}"></td>
-        </tr>
-    </table>
+    <h1>Admin stats</h1>
+    <p>Tu są statystyki:</p>
+
+    <p th:text="'All checks ' + ${allChecksCount}"></p>
+    <p th:text="'EUR checks ' + ${eurChecksCount}"></p>
+    <p th:text="'most popular ' + ${mostPopular}"></p>
 </body>
 </html>

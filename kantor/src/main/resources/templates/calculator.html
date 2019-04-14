@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+    <div th:replace="fragments/layout :: menu"></div>
+    <h1>Kalkulator wymiany walut</h1>
+    <form action="/calculator" method="post">
+        <label for="currency">Waluta</label>
+        <input id="currency" name="currency" type="text"/>
+        <label for="value">Ilość</label>
+        <input id="value" name="value" type="text"/>
+        <input type="submit"/>
+    </form>
+
+</body>
+</html>
