@@ -12,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 @EnableGlobalAuthentication
-@EnableOAuth2Sso
+//@EnableOAuth2Sso // this fixes the username detection
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /* for static unprotected resources */
