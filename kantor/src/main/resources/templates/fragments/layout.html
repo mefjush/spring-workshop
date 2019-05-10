@@ -13,6 +13,17 @@
     <div><a href="/admin/conversion/stats">Stats</a></div>
     <div><a href="/">Strona główna</a></div>
     <div><a href="/contact">Kontakt</a></div>
+
+    <div sec:authorize="isAuthenticated()">
+        <span sec:authentication="name"></span><span class="logout" sec:authorize="hasRole('ADMIN')"> (admin)</span>
+        <form class="form-check form-check-inline" action="#" th:action="@{/logout}" method="post">
+            <input class="btn btn-sm btn-outline-primary" type="submit" value="Logout" />
+        </form>
+    </div>
+
+    <div sec:authorize="!isAuthenticated()">
+        <a class="btn btn-sm btn-outline-primary" th:href="@{/login}">Login</a>
+    </div>
 </div>
 </body>
 </html>

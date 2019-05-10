@@ -5,9 +5,15 @@
     <div th:replace="fragments/layout :: menu"></div>
     <h1>Kursy wymiany walut</h1>
     <table>
+        <tr>
+            <td>Waluta</td>
+            <td>Kupno</td>
+            <td>Sprzedaż</td>
+        </tr>
         <tr th:each="rate : ${rates}">
             <td th:text="${rate.getName()}"></td>
-            <td th:text="${rate.getRate()}"></td>
+            <td th:text="${rate.getBuy()}"></td>
+            <td th:text="${rate.getSell()}"></td>
         </tr>
     </table>
 </body>
