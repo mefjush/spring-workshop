@@ -3,7 +3,11 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-    <!--good example: https://github.com/arnaldop/enhanced-pet-clinic-->
+    <!-- http://localhost:8081/enterOrder -->
+    <!--TODO w 2 drugim etapie zamówienia daj użytkownikowi przycisk "odśwież kurs" -->
+    <!--TODO wprowadź małe losowe wahania kursu aby dać złudzenie ciągłej zmiany kursu -->
+    <!--TODO (opcjonalnie) daj użytkownikowi możliwość wyboru kupna/sprzedaży wybranej waluty i zamiany na PLN -->
+    <!--TODO (opcjonalnie) daj użytkownikowi możliwość dowolnego wyboru obu walut -->
 
     <on-start>
         <evaluate expression="new pl.sda.kantor.flow.OrderProcess()" result="flowScope.order" />

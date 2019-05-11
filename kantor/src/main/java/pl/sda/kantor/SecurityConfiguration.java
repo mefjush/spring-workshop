@@ -37,7 +37,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/user/register/**").anonymous()
                 .antMatchers("/", "/contact/**", "/rates/**", "/h2_console/**").permitAll()     // security still on but all permitted
                 .antMatchers("/admin/**").access("hasRole('ADMIN')") // show that users don't have an access
                 .anyRequest().authenticated()

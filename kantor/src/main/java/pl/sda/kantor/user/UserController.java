@@ -28,6 +28,9 @@ public class UserController {
     @PostMapping("/user/register")
     public String register(@RequestParam("username") String username, @RequestParam("password") String password, HttpServletRequest httpServletRequest) throws ServletException {
 
+        //TODO co się stanie gdy ktoś zarejestruje istniejącą nazwę użytkownika? Napraw błąd.
+        //TODO czy zalogowany użytkownik powinien mieć tu dostęp? Wprowadź poprawkę.
+
         String encodedPassword = passwordEncoder.encode(password);
         jdbcTemplate.update("INSERT INTO users (username, password, enabled) VALUES (?, ?, ?)", username, encodedPassword, 1);
         jdbcTemplate.update("INSERT INTO authorities (username, authority) VALUES (?, ?)", username, "ROLE_USER");

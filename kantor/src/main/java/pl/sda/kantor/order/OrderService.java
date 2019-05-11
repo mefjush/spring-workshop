@@ -5,16 +5,19 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import pl.sda.kantor.rate.ExchangeRatesService;
 import pl.sda.kantor.rate.Rate;
+import pl.sda.kantor.wallet.WalletService;
 
 @Service
 public class OrderService {
 
     private final OrderRepository orderRepository;
     private final ExchangeRatesService exchangeRatesService;
+    private final WalletService walletService;
 
-    public OrderService(OrderRepository orderRepository, ExchangeRatesService exchangeRatesService) {
+    public OrderService(OrderRepository orderRepository, ExchangeRatesService exchangeRatesService, WalletService walletService) {
         this.orderRepository = orderRepository;
         this.exchangeRatesService = exchangeRatesService;
+        this.walletService = walletService;
     }
 
     public void submitOrder(String currency, Double value) {
@@ -27,5 +30,7 @@ public class OrderService {
         String username = auth.getName();
         CurrencyOrder currencyOrder = new CurrencyOrder(currency, value, username, rate);
         orderRepository.save(currencyOrder);
+        walletService.add("PLN", value * rate);
+        walletService.subtract(currency, value);
     }
 }
