@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+<div th:replace="fragments/layout :: menu"></div>
+<h1>Rejestracja</h1>
+<form action="/user/register" method="post">
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text"/>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password"/>
+    <label for="password2">Repeat password</label>
+    <input id="password2" name="password2" type="password"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
