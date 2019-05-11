@@ -15,13 +15,11 @@ public class CurrencyOrder {
     private String currency;
     private Double value;
     private String user;
-    private Double rate;
 
-    public CurrencyOrder(String currency, Double value, String user, Double rate) {
+    public CurrencyOrder(String currency, Double value, String user) {
         this.currency = currency;
         this.value = value;
         this.user = user;
-        this.rate = rate;
     }
 
     public void setCurrency(String currency) {
@@ -50,9 +48,5 @@ public class CurrencyOrder {
 
     public String getUser() {
         return user;
-    }
-
-    public Double getRate() {
-        return rate;
     }
 }
