@@ -178,3 +178,10 @@
     * Wyświetlaj listę próśb o wycenę tylko adminowi.
     * Daj możliwość odpowiedzi na prośbę o wycenę. Np. "Za ten telefon oferuję 150zł"
     * Wystawiaj przedmioty na sprzedaż dopiero po 30 dniach od przyjęcia w zastaw.
+
+Zadania "na dokończenie"
+1. Dodaj obsługę portfela. Patrz klasa `OrderService` i zadanie 15.
+2. Dodaj dodatkowe funkcjonalności do składania zamówienia. Patrz plik `order-flow.xml` i zadanie 16.
+3. Dodaj funkcjonalność chatbota. Patrz zadanie 19 i klasa `ChatBot`.
+4. Sprawdź rejestrację użytkownika (/user/register). Czy potrafisz znaleźć błąd? Napraw TODO z klasy `UserController`.
+5. Dodaj możliwość logowania za pomocą Google OAuth. Patrz zadanie 14 i klasa `SecurityConfiguration`.    
