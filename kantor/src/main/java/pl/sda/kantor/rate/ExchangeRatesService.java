@@ -1,5 +1,6 @@
 package pl.sda.kantor.rate;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,25 +14,20 @@ public class ExchangeRatesService {
     private static final String URL = "https://api.exchangeratesapi.io/latest?base=PLN";
 
     private static class ExchangeRatesDto {
-        //TODO dodać pola które odpowiadają zawartości z pod linku
-
-        public String base;
         //pole które jest mapą String -> Double
         public Map<String, Double> rates;
-
     }
 
     private RestTemplate restTemplate;
+    private double spread;
 
-    public ExchangeRatesService(RestTemplate restTemplate) {
+    public ExchangeRatesService(RestTemplate restTemplate, @Value("${spread.percent:1}") double spread) {
         this.restTemplate = restTemplate;
+        this.spread = spread;
     }
 
     public List<Rate> getRates() {
         ExchangeRatesDto exchangeRates = restTemplate.getForObject(URL, ExchangeRatesDto.class);
-
-        //TODO skonstruować listę Rates na podstawie zawartości ExchangeRates
-        //pętla for po mapie w exchangeRates która stworzy listę Rate
 
         ArrayList<Rate> rates = new ArrayList<>();
 
@@ -39,13 +35,10 @@ public class ExchangeRatesService {
             String currency = entry.getKey();//skrót waluty np EUR
             Double exchangeRate = entry.getValue();//kurs 0.3524161137,
 
-            //TODO stworzyć obiekt Rates i dodać do zwracanej listy
-
-            Rate rate = new Rate(currency, exchangeRate);
+            Rate rate = new Rate(currency, exchangeRate, spread);
 
             rates.add(rate);
         }
-
 
         return rates;
     }

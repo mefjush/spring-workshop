@@ -7,7 +7,8 @@
     <table>
         <tr th:each="rate : ${rates}">
             <td th:text="${rate.getName()}"></td>
-            <td th:text="${rate.getRate()}"></td>
+            <td th:text="${rate.getBuyRate()}"></td>
+            <td th:text="${rate.getSellRate()}"></td>
         </tr>
     </table>
 </body>
