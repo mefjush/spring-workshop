@@ -42,6 +42,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();
+//                .and()
+//                .oauth2Login();
+        //TODO setup Google OAuth login 
 
         //for h2 console only
         http.csrf().disable();
