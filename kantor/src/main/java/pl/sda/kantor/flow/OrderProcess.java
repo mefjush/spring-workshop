@@ -6,7 +6,6 @@ public class OrderProcess implements Serializable {
 
     private String currency;
     private String value;
-    private String rate;
 
     public void setCurrency(String currency) {
         this.currency = currency;
@@ -16,19 +15,11 @@ public class OrderProcess implements Serializable {
         this.value = value;
     }
 
-    public void setRate(String rate) {
-        this.rate = rate;
-    }
-
     public String getCurrency() {
         return currency;
     }
 
     public String getValue() {
         return value;
-    }
-
-    public String getRate() {
-        return rate;
     }
 }

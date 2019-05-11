@@ -37,12 +37,6 @@ public class RateController {
             Model model,
             @RequestParam("currency") String currency,
             @RequestParam("value") Double value) {
-        
-        //TODO odczytaj parametry przekazane przez użytkownika
-        System.out.println(currency);
-        System.out.println(value);
-        //TODO wyświetl dane przekazane przez użytkownika na stronie, np. 50 EUR = ???
-        //TODO na podstawie danych od użytkownika przelicz ile PLN dostanie, np 50 EUR = 250 PLN
 
         Rate rate = exchangeRatesService.getRate(currency);
         Double convertedValue = value / rate.getRate();
@@ -52,7 +46,6 @@ public class RateController {
         currencyCheck.setCurrency(currency);
         currencyCheck.setTimestamp(new Date().getTime());
         currencyCheckRepository.save(currencyCheck);
-
         
         model.addAttribute("currency", currency);
         model.addAttribute("value", value);
