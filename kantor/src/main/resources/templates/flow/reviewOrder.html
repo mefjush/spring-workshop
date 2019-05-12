@@ -6,6 +6,8 @@
 
 <p>Zamawiasz <span th:text="${order.value}"></span> <span th:text="${order.currency}"></span> po kursie <span th:text="${rate}"></span>.</p>
 
+<span th:text="${#numbers.formatDecimal(rate * order.value, 0, 2)}"/>
+
 <form id="triggerform" method="post" th:action="${flowExecutionUrl}">
     <button type="submit" name="_eventId_revise">Zmień</button>
     <button type="submit" name="_eventId_confirm">Zatwierdź</button>

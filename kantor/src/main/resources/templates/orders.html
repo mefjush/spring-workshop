@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/layout :: head"></head>
+<body>
+    <div th:replace="fragments/layout :: menu"></div>
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Użytkownik</td>
+            <td>Wartość</td>
+            <td>Waluta</td>
+            <td>Kurs</td>
+            <td>Realizacja</td>
+        </tr>
+        <tr th:each="order : ${orders}">
+            <td th:text="${order.getId()}"></td>
+            <td th:text="${order.getUser()}"></td>
+            <td th:text="${order.getValue()}"></td>
+            <td th:text="${order.getCurrency()}"></td>
+            <td th:text="${order.getRate()}"></td>
+            <td>
+                <form action="/admin/orders/confirm" method="post">
+                    <input type="hidden" id="orderId" name="orderId" th:value="${order.getId()}">
+                    <button type="submit" th:disabled="${order.getConfirmed()}">Zrealizuj</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

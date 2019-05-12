@@ -23,9 +23,12 @@ public class OrderController {
     public String submitOrder(
             @RequestParam("currency") String currency,
             @RequestParam("value") Double value) {
-
-        orderService.submitOrder(currency, value);
-
+        
+        try {
+            orderService.submitOrder(currency, value);
+        } catch (Exception e) {
+            return "orderFailed";
+        }
         return "orderSubmitted";
     }
 }

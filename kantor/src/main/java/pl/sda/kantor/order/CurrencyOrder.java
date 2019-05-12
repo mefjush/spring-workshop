@@ -15,12 +15,17 @@ public class CurrencyOrder {
     private Double value;
     private String user;
     private Double rate;
+    private Boolean confirmed;
 
     public CurrencyOrder(String currency, Double value, String user, Double rate) {
         this.currency = currency;
         this.value = value;
         this.user = user;
         this.rate = rate;
+        this.confirmed = false;
+    }
+
+    public CurrencyOrder() {
     }
 
     public void setCurrency(String currency) {
@@ -53,5 +58,21 @@ public class CurrencyOrder {
 
     public Double getRate() {
         return rate;
+    }
+
+    public Boolean getConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(Boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
     }
 }

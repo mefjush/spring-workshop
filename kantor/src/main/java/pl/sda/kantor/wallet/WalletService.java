@@ -20,7 +20,7 @@ public class WalletService {
 
     public synchronized void subtract(String currency, Double value) {
         Double walletAmount = walletRepository.getWalletAmount(currency);
-        if (value > walletAmount) {
+        if (walletAmount == null || value > walletAmount) {
             throw new RuntimeException("Not enough money to subtract " + value + " " + currency);
         }
         WalletEntry walletEntry = new WalletEntry();

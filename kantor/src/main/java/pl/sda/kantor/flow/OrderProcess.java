@@ -5,13 +5,13 @@ import java.io.Serializable;
 public class OrderProcess implements Serializable {
 
     private String currency;
-    private String value;
+    private Double value;
 
     public void setCurrency(String currency) {
         this.currency = currency;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 
@@ -19,7 +19,7 @@ public class OrderProcess implements Serializable {
         return currency;
     }
 
-    public String getValue() {
+    public Double getValue() {
         return value;
     }
 }

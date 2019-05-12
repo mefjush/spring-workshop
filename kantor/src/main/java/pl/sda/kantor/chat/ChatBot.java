@@ -8,6 +8,7 @@ public class ChatBot {
     public String replyUserMessage(String user, String message) {
         if (message.startsWith("?eur")) {
             //TODO popraw i przetestuj na stronie http://spring-ws-chat.herokuapp.com/
+            //TODO ?toEur 100PLN
             return "1 EUR = ??? PLN";
         }
         return "";

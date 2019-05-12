@@ -20,7 +20,7 @@ public class ChatConfiguration {
         WebSocketStompClient stompClient = new WebSocketStompClient(sockJsClient);
         stompClient.setMessageConverter(new MappingJackson2MessageConverter());
         ChatConnection chatConnection = new ChatConnection(stompClient, chatBot);
-        chatConnection.connect(DEFAULT_URL);
+//        chatConnection.connect(DEFAULT_URL);
         return chatConnection;
     }
 }

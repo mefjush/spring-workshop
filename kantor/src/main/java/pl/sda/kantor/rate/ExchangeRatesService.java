@@ -7,6 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 @Service
 public class ExchangeRatesService {
@@ -20,6 +21,7 @@ public class ExchangeRatesService {
 
     private RestTemplate restTemplate;
     private double spread;
+    private Random random = new Random();
 
     public ExchangeRatesService(RestTemplate restTemplate, @Value("${spread.percent:1}") double spread) {
         this.restTemplate = restTemplate;
@@ -35,7 +37,10 @@ public class ExchangeRatesService {
             String currency = entry.getKey();//skrót waluty np EUR
             Double exchangeRate = entry.getValue();//kurs 0.3524161137,
 
-            Rate rate = new Rate(currency, exchangeRate, spread);
+            double rand = random.nextInt(100);
+            Double randomRate = (1 + (rand / 10000)) * exchangeRate;
+            
+            Rate rate = new Rate(currency, randomRate, spread);
 
             rates.add(rate);
         }
